@@ -3,15 +3,27 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "app/_layout.jsx",
+    "components/themed-view.jsx",
+    "components/parallax-scroll-view.jsx",
+    "components/hello-wave.jsx",
+    "components/external-link.jsx",
+    "components/haptic-tab.jsx",
+    "components/ui/icon-symbol.ios.jsx",
+    "components/ui/icon-symbol.jsx",
+    "app/modal.jsx",
+    "app/(tabs)/signup.jsx",
+    "app/(tabs)/meeting.jsx",
+    "app/(tabs)/index.jsx",
+    "app/(tabs)/explore.jsx",
+    "app/(tabs)/_layout.jsx"
   ]
 }

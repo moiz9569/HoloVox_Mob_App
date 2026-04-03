@@ -1,3 +1,4 @@
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import {
   Image,
@@ -39,7 +40,13 @@ const meetings = [
 ];
 
 export default function MeetingPage() {
+  const router = useRouter();
   const [tab, setTab] = useState("Upcoming");
+
+  const handleCreateMeeting = () => {
+    const roomId = Math.random().toString(36).substring(7);
+    router.push(`/meeting/${roomId}?role=host`);
+  };
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -50,7 +57,10 @@ export default function MeetingPage() {
             source={{ uri: "https://randomuser.me/api/portraits/men/75.jpg" }}
             style={styles.avatar}
           />
-          <TouchableOpacity style={styles.createButton}>
+          <TouchableOpacity
+            style={styles.createButton}
+            onPress={handleCreateMeeting}
+          >
             <Text style={styles.createButtonText}>+ Create Meeting</Text>
           </TouchableOpacity>
         </View>
